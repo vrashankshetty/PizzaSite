@@ -11,7 +11,7 @@ if (!MONGO_URL) {
 /**
  * Global is used here to maintain a cached connection across hot reloads
  * in development. This prevents connections growing exponentially
- * during API Route usage.
+ * during API Route us
  */
 let cached = global.mongoose
 

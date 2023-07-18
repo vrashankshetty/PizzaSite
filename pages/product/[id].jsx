@@ -60,7 +60,7 @@ const Product = ({product}) => {
         <div className={styles.ingredients}>
         {product.extraOptions.map((option)=>{
           return(
-            <div className={styles.option}>
+            <div className={styles.option} key={Math.floor(Math.random()*1000)}>
               <input
               type="checkbox"
               id={option.text}

@@ -1,11 +1,10 @@
 import styles from "../styles/Cart.module.css";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import {
   PayPalScriptProvider,
   PayPalButtons,
-  usePayPalScriptReducer,
 } from "@paypal/react-paypal-js";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -38,17 +37,9 @@ const Cart = () => {
   const ButtonWrapper = ({ currency, showSpinner }) => {
     // usePayPalScriptReducer can be use only inside children of PayPalScriptProviders
     // This is the main reason to wrap the PayPalButtons in a new component
-    const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
 
-    useEffect(() => {
-      dispatch({
-        type: "resetOptions",
-        value: {
-          ...options,
-          currency: currency,
-        },
-      });
-    }, [currency, showSpinner]);
+
+ 
 
     return (
       <>
